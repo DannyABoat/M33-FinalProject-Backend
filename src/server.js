@@ -15,7 +15,7 @@ const app = express();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://m33-final-project.herokuapp.com" }));
 
 app.use(userRouter);
 app.use(boardRouter);
