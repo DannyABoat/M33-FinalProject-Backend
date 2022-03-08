@@ -9,7 +9,7 @@ const express = require("express");
 const cors = require("cors");
 const userRouter = require("./User/userRoutes");
 const boardRouter = require("./leadBoard/leadBoardRoutes");
-const port = 5007;
+const port = 5001;
 
 const app = express();
 
@@ -20,37 +20,37 @@ app.use(cors());
 app.use(userRouter);
 app.use(boardRouter);
 
-const App = async() =>{
-    if(argv.add){
-        const userObj = {
-            firstName: argv.firstName,
-            lastName: argv.lastName,
-            username: argv.username,
-            email: argv.email,
-            password: argv.password
-        }
-        await addUser(userObj)
-    } else if (argv.list){
-        await listUsers();
-    } else if (argv.update){
-        await updateUser(argv);
-    } else if (argv.deleteOne){
-        await deleteUser(argv);
-    } else {
-        console.log("Wrong query")
-    }
-};
+// const App = async() =>{
+//     if(argv.add){
+//         const userObj = {
+//             firstName: argv.firstName,
+//             lastName: argv.lastName,
+//             username: argv.username,
+//             email: argv.email,
+//             password: argv.password
+//         }
+//         await addUser(userObj)
+//     } else if (argv.list){
+//         await listUsers();
+//     } else if (argv.update){
+//         await updateUser(argv);
+//     } else if (argv.deleteOne){
+//         await deleteUser(argv);
+//     } else {
+//         console.log("Wrong query")
+//     }
+// };
 
-const Table = async() =>{
-    if(argv.addTable){
-        const scoreObj = {
-            score: argv.score
-        }
-        await addScore(scoreObj)
-    } else {
-        console.log("Invalid")
-    }
-};
+// const Table = async() =>{
+//     if(argv.addTable){
+//         const scoreObj = {
+//             score: argv.score
+//         }
+//         await addScore(scoreObj)
+//     } else {
+//         console.log("Invalid")
+//     }
+// };
 
 
 app.listen(port, () => {
@@ -58,4 +58,4 @@ app.listen(port, () => {
 });
 
 App()
-Table()
+// Table()
