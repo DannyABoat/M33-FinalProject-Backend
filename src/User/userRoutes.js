@@ -10,7 +10,7 @@ userRouter.delete("/User", deleteUser);
 
 
 
-userRouter.post("/signIn", login);
+// userRouter.post("/signIn", login);
 
 
 module.exports = userRouter;
