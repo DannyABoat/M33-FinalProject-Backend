@@ -11,20 +11,14 @@ const userRouter = require("./User/userRoutes");
 const boardRouter = require("./leadBoard/leadBoardRoutes");
 const port = 5007;
 
-
 const app = express();
 
 
 app.use(express.json());
 app.use(cors());
 
-app.use(cors({
-    origin: '*'
-}));
-
 app.use(userRouter);
 app.use(boardRouter);
-
 
 const App = async() =>{
     if(argv.add){
