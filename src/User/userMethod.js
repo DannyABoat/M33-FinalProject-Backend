@@ -9,8 +9,7 @@ exports.addUser = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).send({ err: error.message });
-  }
-=======
+ }
 
 exports.addUser = async (userObj) => {
     try{
