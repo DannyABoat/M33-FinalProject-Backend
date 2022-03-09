@@ -13,6 +13,11 @@ userRouter.post("/register", hashPassword, addUser);
 userRouter.post("/user", getUser);
 userRouter.put("/user", updateUser);
 userRouter.delete("/user", deleteUser);
+=======
+userRouter.post("/User", hashPassword, addUser);
+userRouter.get("/User", listUsers);
+userRouter.put("/User", updateUser);
+userRouter.delete("/User", deleteUser);
 
 userRouter.get("/login", comparePassword);
 
