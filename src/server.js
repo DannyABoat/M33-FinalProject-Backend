@@ -9,13 +9,14 @@ const express = require("express");
 const cors = require("cors");
 const userRouter = require("./User/userRoutes");
 const boardRouter = require("./leadBoard/leadBoardRoutes");
-const port = 5001;
+const port = process.env.PORT;
 
 const app = express();
 
 
 app.use(express.json());
-app.use(cors({ origin: "https://m33-final-project.herokuapp.com" }));
+app.use(cors());
+// app.use(cors({ origin: "https://m33-final-project.herokuapp.com" }));
 
 app.use(userRouter);
 app.use(boardRouter);
@@ -57,5 +58,5 @@ app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
 
-App()
+// App()
 // Table()
