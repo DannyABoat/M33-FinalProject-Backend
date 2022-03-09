@@ -8,7 +8,12 @@ const bcrypt = require("bcryptjs");
 exports.addUser = async (userObj) => {
     try{
         await User.sync();
-        await User.create(userObj); 
+        await User.create({
+        firstName: userObj.username,
+   lastName: userObj.lastName,
+   username: userObj.firstName,
+   email: userObj.email,
+   password: userObj.password}); 
     } catch (error) {
         console.log (error);
     }
